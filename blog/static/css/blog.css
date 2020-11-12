@@ -6,15 +6,18 @@ body {
     padding-left: 15px;
 }
 .page-header {
-    background-color: #98FF98;
+    background-color: #daa520;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+    background:url("loupe.jpg"), no-repeat;
+    
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+
 }
 
 .content {
@@ -41,7 +44,7 @@ h1, h2, h3, h4 {
     color: #ffffff;
     float: right;
     font-size: 26pt;
-    margin-right: 20px;
+    margin-right: 150px;
 }
 
 .post {

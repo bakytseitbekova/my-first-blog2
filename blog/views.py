@@ -1,6 +1,8 @@
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils import timezone
+from django.views.generic import ListView, CreateView # новый
+from django.urls import reverse_lazy 
 from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
@@ -39,4 +41,15 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+def post_publish(request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        post.publish()
+        return redirect('post_detail', pk=pk)
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('post_list')
+
+
+
 # Create your views here.
